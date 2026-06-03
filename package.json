@@ -1,0 +1,27 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@vitejs/plugin-vue2": "^2.3.4",
+    "autoprefixer": "^10.4.27",
+    "babel-plugin-component": "^1.1.1",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1",
+    "vite-plugin-vue-inspector": "^5.3.2",
+    "vue-template-compiler": "^2.7.16"
+  },
+  "dependencies": {
+    "axios": "^1.14.0",
+    "element-ui": "^2.15.14",
+    "vue": "^2.7.16"
+  }
+}
