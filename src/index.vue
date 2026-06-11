@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100% grid grid-rows-[auto_auto_1fr] bg-zinc-100">
+  <div class="min-w-[1000px] max-w-[2100px] mx-auto grid grid-rows-[auto_auto_1fr] bg-zinc-100">
     <div class="bg-[#545c64]">
       <div class="w-[1000px] mx-auto grid grid-cols-[auto_1fr]">
         <div class="h-[100%] w-[60px] bg-[url('/public/905logo.png')] bg-contain bg-center bg-no-repeat">
