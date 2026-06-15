@@ -10,11 +10,11 @@
                 :style="{ backgroundImage: 'url(' + headimageUrl + ')' }"> </div>
             </div>
             <div class="my-auto text-white">
-                <i class="text-6xl">admin</i>
+                <i class="text-6xl">{{userInfo.username}}</i>
                 <br>
-                <i>个人签名</i>
+                <i>{{userInfo.signature}}</i>
             </div>
-            <div class="mt-auto">
+            <div class="mt-auto text-white">
                 <i class="text-6xl mr-3">573</i>
                 <i class="el-icon-star-on text-[7vh] text-yellow-300"></i>
             </div>
@@ -24,11 +24,24 @@
 
 <script>
 export default {
-    data() {
-    return {
-      titleimageUrl: 'http://localhost:3000/imagems/take?filename=1781189398383-blog.jpg',
-      headimageUrl: 'http://localhost:3000/imagems/take?filename=1781190003212-blog.png'
-    }
+    props: {
+        userInfo: {
+        type: Object,
+        default: () => ({
+            username: '访客',
+            signature: '暂无签名',
+            headimageFilename: 'default_avatar.png',
+            titleimageFilename: 'default_bg.jpg'
+        })
+        }
+    },
+    computed: {
+        headimageUrl() {
+            return `http://localhost:3000/imagems/take?filename=${this.userInfo.headimageFilename}`;
+        },
+        titleimageUrl() {
+            return `http://localhost:3000/imagems/take?filename=${this.userInfo.titleimageFilename}`;
+        }
   }
 }
 </script>
