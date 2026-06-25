@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import index from './index.vue'
 import './style.css'
+import 'github-markdown-css';
 
 // 导入 Element UI
 import 'element-ui/lib/theme-chalk/index.css'

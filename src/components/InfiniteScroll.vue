@@ -8,11 +8,17 @@
       <li v-for="post in posts" :key="post.id" class="list-item">
         <div class="aspect-4/1 bg-[#fff] mb-[10px] p-[10px]">
             <div>
-              <h3>{{ post.title }}</h3>
+                <h1 class="text-[20px] font-bold">{{ post.title }}</h1>
                 <p>{{ post.summary }}</p>
-                <p>{{ post.content }}</p> 
-                <p>{{ post.release_time }}</p>
-                <p>{{ post.username }}</p>
+
+
+                <div class="w-[50%] overflow-hidden">
+                    <img :src="`http://localhost:3000/imagems/take?filename=${post.cover_image}`" 
+                        alt="封面图" 
+                        class="w-full h-auto object-cover">
+                </div>
+                <!-- <p>{{ post.content }}</p>  -->
+                <p class="text-neutral-500">{{ post.username }} {{ post.release_time }}</p>
                 
             </div>
             

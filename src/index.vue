@@ -17,7 +17,7 @@
       
       <div class="" >
         <div class="w-[100%] h-[100%] ">
-
+            <MarkdownRenderer :content="userInfo.articleContent" />
         </div>
       </div>
 
@@ -34,12 +34,14 @@ import axios from 'axios';
 import UserSpaceTitle from './components/UserSpaceTitle.vue';
 import NavMenu from './components/NavMenu.vue';
 import InfiniteScroll from './components/InfiniteScroll.vue';
+import MarkdownRenderer from './components/MarkdownRenderer.vue';
 
 export default{
     components:{
         UserSpaceTitle,
         NavMenu,
-        InfiniteScroll
+        InfiniteScroll,
+        MarkdownRenderer
     },
     data() {
         return {
@@ -47,7 +49,8 @@ export default{
             username: '',
             signature: '',
             headimageFilename: '',
-            titleimageFilename: ''
+            titleimageFilename: '',
+            articleContent: '',
       }
         }
     },
@@ -67,10 +70,11 @@ export default{
                 console.log(response.data[0])
                 const user = response.data[0];
                 this.userInfo = {
-                username: user.username,
-                signature: user.user_signature,
-                headimageFilename: user.user_head_image_path,
-                titleimageFilename: user.user_title_image_path
+                    username: user.username,
+                    signature: user.user_signature,
+                    headimageFilename: user.user_head_image_path,
+                    titleimageFilename: user.user_title_image_path,
+                    articleContent: '# markdown',
                 };
             } catch (error) {
                 console.error(error)
